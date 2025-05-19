@@ -1,0 +1,37 @@
+.container {
+    width: 40px;
+    height: 50px;
+    background: rgb(223, 223, 223);
+    background: rgb(255, 255, 255);
+    border: 1px solid gray;
+}
+
+.letter {
+    font-size: 2rem;
+    line-height: 50px;
+    text-align: center;
+}
+
+.correct-position {
+    background: rgb(115, 204, 73);
+}
+
+.correct-letter {
+    background: rgb(255, 193, 77);
+}
+
+.not-in-solution {
+    
+    background: rgb(223, 223, 223);
+}
+
+.active {
+    background: rgb(255, 255, 255);
+}
+
+/* export enum LetterState {
+    CorrectPosition = "correct-position",
+    CorrectLetter = "correct-letter",
+    NotInSolution = "not-in-solution",
+    Active = "active"
+} */

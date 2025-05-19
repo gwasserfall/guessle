@@ -1,0 +1,19 @@
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden">
+
+    <div style="position: absolute; top: 20px; left: calc(100vw / 2); transform: translate(-50%, -50%);">{{ solution }}</div>
+
+    <div style="display: flex; flex-direction: column; gap: 5px;">
+        
+        <div class="row">
+        @for (letter of guess; track $index) {
+            <app-letter [letter]="letter" />
+        }
+        </div>
+
+        @for (guess of guesses; track $index) {
+            <div class="row">
+                <app-guess-row [guess]="guess" [solution]="solution" />
+            </div>
+        }
+    </div>
+</div>
