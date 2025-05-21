@@ -1,0 +1,29 @@
+.keyboard-container {
+  position: relative;
+  width: 100%;    /* Or a fixed width */
+  margin: 0 auto; /* Centered horizontally */
+  /* height: fit-content; */
+  /* Optional: add background, border, etc. */
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.key {
+  width: 40px;
+  height: 50px;
+  margin: 0 2px;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 6px;
+  background: #eee;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.key:active {
+  background: #ccc;
+}

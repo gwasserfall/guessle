@@ -12,6 +12,10 @@
     text-align: center;
 }
 
+.active {
+    background: pink !important;
+}
+
 .correct-position {
     background: rgb(115, 204, 73);
 }

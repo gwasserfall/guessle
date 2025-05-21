@@ -1,19 +1,29 @@
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden">
 
-    <div style="position: absolute; top: 20px; left: calc(100vw / 2); transform: translate(-50%, -50%);">{{ solution }}</div>
+    <!-- <div style="position: absolute; top: 20px; left: calc(100vw / 2); transform: translate(-50%, -50%);">{{ solution }}</div> -->
 
     <div style="display: flex; flex-direction: column; gap: 5px;">
         
-        <div class="row">
-        @for (letter of guess; track $index) {
-            <app-letter [letter]="letter" />
-        }
-        </div>
-
-        @for (guess of guesses; track $index) {
+        
+        @for (item of gameboard | keyvalue; track $index; let row = $index) {
             <div class="row">
-                <app-guess-row [guess]="guess" [solution]="solution" />
+                @for (letter of item.value; track $index; let col = $index) {
+                    <app-letter [active]="activeRow === row && activeCol === col" [letter]="letter" />
+                }
             </div>
         }
+
+        @if (error) {
+            <div style="text-align: center; color: red;">{{ error }}</div>
+        }
+
+        @if (gameComplete && activeRow === allowedGuessCount) {
+            <div style="text-align: center;">{{ solution }}</div>
+            <div style="text-align: center;">
+                <button (click)="startGame()">Restart</button>
+            </div>
+        }
+
     </div>
+    <app-keyboard />
 </div>
